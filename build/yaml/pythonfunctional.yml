@@ -8,7 +8,7 @@
     displayName: Install dependencies
     inputs:
       script: >
-        python -m pip install --upgrade pip
+        # python -m pip install --upgrade pip
         find Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;
         # pip install -r Bots/Python/Consumers/CodeFirst/SimpleGovHostBot/requirements.txt
         # pip install -r Bots/Python/Consumers/CodeFirst/SimpleHostBot/requirements.txt
