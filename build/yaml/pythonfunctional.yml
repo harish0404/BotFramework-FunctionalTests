@@ -20,4 +20,4 @@
 
   - task: Bash@3
     inputs:
-      filePath: 'find / -type f -name "requirements.txt" -exec ls -lrt "{}" \;'
+      filePath: 'find ./Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;'
