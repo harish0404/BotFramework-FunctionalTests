@@ -26,4 +26,4 @@
       targetType: 'inline'
       script: |
         python -m pip install --upgrade pip;
-        find ./Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;
+        find ./Bots -type f -name "requirements.txt" -exec pip install -r "{}" \;
