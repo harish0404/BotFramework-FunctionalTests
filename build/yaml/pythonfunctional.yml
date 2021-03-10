@@ -4,17 +4,20 @@
     displayName: Use Python version
     inputs:
       versionSpec: '3.7.x'
-  - task: CmdLine@2
-    displayName: Install dependencies
-    inputs:
-      script: >
+  # - task: CmdLine@2
+  #   displayName: Install dependencies
+  #   inputs:
+  #     script: >
         # python -m pip install --upgrade pip
-        find Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;
+        # find Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;
         # pip install -r Bots/Python/Consumers/CodeFirst/SimpleGovHostBot/requirements.txt
         # pip install -r Bots/Python/Consumers/CodeFirst/SimpleHostBot/requirements.txt
         # pip install -r Bots/Python/Skills/CodeFirst/CardSkillBot/requirements.txt
         # pip install -r Bots/Python/Skills/CodeFirst/EchoSkillBot/requirements.txt
         # pip install -r Bots/Python/Skills/CodeFirst/MultiturnSkillBot/requirements.txt
         # pip install -r Bots/Python/Skills/CodeFirst/ProactiveSkillBot/requirements.txt
-      failOnStderr: true
+      # failOnStderr: true
 
+  - task: Bash@3
+    inputs:
+      filePath: 'find Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;'
