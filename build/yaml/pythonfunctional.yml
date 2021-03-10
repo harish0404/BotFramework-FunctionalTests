@@ -17,7 +17,13 @@
         # pip install -r Bots/Python/Skills/CodeFirst/MultiturnSkillBot/requirements.txt
         # pip install -r Bots/Python/Skills/CodeFirst/ProactiveSkillBot/requirements.txt
       # failOnStderr: true
+  # - task: Bash@3
+  #   inputs:
+  #     targetType: 'inline'
+  #     script: 'find ./Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;'
   - task: Bash@3
     inputs:
       targetType: 'inline'
-      script: 'find ./Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;'
+      script: |
+        python -m pip install --upgrade pip;
+        find ./Bots -type f -name "requirements.txt" -exec ls -lrt "{}" \;
